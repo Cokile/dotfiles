@@ -1,0 +1,25 @@
+{
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "rust"
+    ],
+    "outline.sortBy": "position",
+    "outline.splitCommand": "botright 50vs",
+    
+    "snippets.ultisnips.directories": [
+        "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips"
+    ],
+    
+    "solargraph.diagnostics": true,
+    
+    "go.goplsOptions": {
+        "gofumpt": true,
+        "usePlaceholders": true,
+        "completeUnimported": true
+    },
+
+    "sourcekit.sdk": "iphonesimulator",
+    "sourcekit.targetArch": "x86_64-apple-ios14.5-simulator",
+
+    "explorer.openAction.strategy": "vsplit"
+}

@@ -1,0 +1,53 @@
+colors:
+  primary:
+    background: '#F2E5BC'
+    foreground: '#654735'
+  normal:
+    black:   '#654735'
+    red:     '#C14A4A'
+    green:   '#6C782E'
+    yellow:  '#B47109'
+    blue:    '#45707A'
+    magenta: '#945E80'
+    cyan:    '#4C7A5D'
+    white:   '#968977'
+  bright:
+    black:   '#654735'
+    red:     '#C14A4A'
+    green:   '#6C782E'
+    yellow:  '#B47109'
+    blue:    '#45707A'
+    magenta: '#945E80'
+    cyan:    '#4C7A5D'
+    white:   '#968977'
+  selection:
+    text: "#F2E5BC"
+    background: "#968977"
+  search:
+    matches:
+     foreground: '#EDDEB5'
+     background: '#69791D'
+    focused_match:
+     foreground: '#EBD9AE'
+     background: '#BF6D00'
+    bar:
+     background: '#654735'
+     foreground: '#F2E5BC'  
+
+font:
+  family: Fira Code
+  size: 14.0
+
+window:
+  padding:
+    x: 4
+    y: 4
+  decorations: none
+  startup_mode: Maximized
+
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux -2"

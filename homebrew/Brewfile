@@ -1,0 +1,44 @@
+# Taps
+tap "homebrew/core"
+tap "homebrew/cask"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "melonamin/formulae"
+
+# Formulae
+brew "bat"
+brew "exa"
+brew "fd"
+brew "fish"
+brew "fzf"
+brew "git"
+brew "git-delta"
+brew "lazygit"
+brew "mas"
+brew "neovim"
+brew "python@3.9"
+brew "ripgrep"
+brew "ruby"
+brew "tealdeer"
+brew "tig"
+brew "tmux"
+brew "universal-ctags"
+
+# Casks
+cask "alacritty"
+cask "appcleaner"
+cask "dropbox"
+cask "font-fira-code"
+cask "google-chrome"
+cask "hammerspoon"
+cask "karabiner-elements"
+cask "mtmr"
+cask "squirrel"
+cask "swiftbar"
+cask "typora"
+cask "visual-studio-code"
+
+# Mac App Store Apps
+mas "The Unarchiver", id: 425424353
+mas "Telegram", id: 747648890
+mas "Reeder 4", id: 1449412482

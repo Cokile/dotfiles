@@ -1,0 +1,17 @@
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+
+imap jk <Esc>
+
+nmap <C-k> 5k
+nmap <C-j> 5j
+nmap <C-h> :pj<CR>
+nmap <C-l> :nj<CR>
+
+nmap <Space>s :xcmenucmd Save<CR>
+nmap <Space>w :xcmenucmd Editor<CR>
+nmap <Space>v :xcmenucmd Editor Below<CR>
+nmap <C-p> :xcmenucmd Open Quickly...<CR>
+

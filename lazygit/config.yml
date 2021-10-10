@@ -1,0 +1,16 @@
+startuppopupversion: 1
+notARepository: "skip"
+reporting: "off"
+
+gui:
+  theme:
+    lightTheme: true
+    selectedRangeBgColor:
+      - reverse
+
+git:
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  paging:
+    colorarg: always
+    pager: delta --paging=never --diff-highlight
+  

@@ -1,0 +1,40 @@
+.DS_Store
+
+## User settings
+xcuserdata/
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+.build/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/
+
+# SwiftPM
+.swiftpm
+
+# Accio dependency management
+Dependencies/
+.accio/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+iOSInjectionProject/

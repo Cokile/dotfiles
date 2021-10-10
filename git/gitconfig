@@ -1,0 +1,83 @@
+[user]
+    name = Cokile
+    email = kelvintgx@gmail.com
+[core]
+    excludesfile = ~/.gitignore
+    editor = nvim
+    pager = delta
+[credential]
+	helper = store --file ~/.my-credentials
+[color]
+    ui = auto
+[push]
+    default = simple
+[pull]
+    rebase = true
+[alias]
+    # add
+    ada = add -- .
+    # branch
+    brs = branch -vv
+    brd = branch -d
+    brm = branch -m
+    # checkout
+    co = checkout
+    cob = checkout -b
+    coa = checkout -- .
+    cot = checkout --track
+    cm = checkout master
+    cb = checkout -
+    # cherry-pick
+    cp = cherry-pick
+    cpc = cherry-pick --continue
+    cpa = cherry-pick --abort
+    # commit
+    cim = commit -m
+    cam  = commit --amend
+    again = commit --amend --no-edit
+    # diff
+    df = diff
+    dfs = diff --staged
+    # github
+    open = "!f() { local base=$(git remote get-url origin | rev | cut -f 2- -d "." | rev) branch=$(git rev-parse --abbrev-ref HEAD); open ${base}; }; f"
+    pr = "!f() { local base=$(git remote get-url origin | rev | cut -f 2- -d "." | rev) branch=$(git rev-parse --abbrev-ref HEAD); open ${base}/pull/new/${branch}; }; f"
+    # log
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(blue)%s%Creset %C(dim cyan)<%an>%Creset %C(dim white)(%ci)%Creset' --abbrev-commit
+    # push
+    ps = push
+    pf = push -f
+    psu = "!f() { local branch=$(git rev-parse --abbrev-ref HEAD); git push -u origin ${branch}; }; f"
+    # pull
+    plm = pull origin master
+    cpp = "!f() { git cm && git plm && git pre origin; }; f"
+    # rebase
+    rbi = rebase -i
+    rbc = rebase --continue
+    rba = rebase --abort
+    rbm = rebase master
+    # remote
+    pre = remote prune origin
+    # reset
+    rsa =  reset -- .
+    rss = reset --soft
+    rsh = reset --hard
+    # status
+    st = status
+[filter "lfs"]
+    required = true
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+[interactive]
+    diffFilter = delta --color-only --relative-paths
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+[delta "decorations"]
+    minus-style = brightred
+    minus-emph-style = "#f5e5b7" brightred 
+    line-numbers-minus-style = brightred
+    plus-style = brightgreen
+    plus-emph-style = "#f5e5b7" brightgreen
+    line-numbers-plus-style = brightgreen
+    hunk-header-style = omit
+    syntax-theme = none
