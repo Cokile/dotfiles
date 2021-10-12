@@ -8,6 +8,8 @@
     ~/:
     ~/.config:
       recursive: true
+    ~/Library/Developer/Xcode/UserData:
+      recursive: true
 
 - link:
     ~/Brewfile: homebrew/Brewfile
@@ -39,6 +41,7 @@
     ~/.gitignore: git/gitignore
 
     ~/.gruvbox.dircolors: themes/gruvbox.dircolors
+    ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Rei.xccolortheme: themes/Rei.xccolortheme
 
     ~/.tigrc: tig/tigrc
 
