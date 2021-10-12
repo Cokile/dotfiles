@@ -38,6 +38,8 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
 
+    ~/.gruvbox.dircolors: themes/gruvbox.dircolors
+
     ~/.tigrc: tig/tigrc
 
     ~/.tmux.conf: tmux/tmux.conf

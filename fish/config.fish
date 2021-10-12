@@ -5,6 +5,7 @@ set fish_key_bindings fish_user_key_bindings
 ## themes
 set fish_color_search_match --background='D7D7AA'
 set fish_color_selection --background='D7D7AA'
+eval (gdircolors -c ~/.gruvbox.dircolors)
 
 
 # EXPORTS
