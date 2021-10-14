@@ -9,7 +9,7 @@ gui:
       - reverse
 
 git:
-  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  branchLogCmd: "git log --graph"
   paging:
     colorarg: always
     pager: delta --paging=never --diff-highlight

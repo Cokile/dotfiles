@@ -9,6 +9,11 @@
 	helper = store --file ~/.my-credentials
 [color]
     ui = auto
+[format]
+    pretty = %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %C(black)%s%C(reset) %C(green)<%an>%C(reset) %C(white)(%cr)%C(reset)
+[log]
+    abbrevCommit = true
+    decorate = true
 [push]
     default = simple
 [pull]
@@ -42,7 +47,7 @@
     open = "!f() { local base=$(git remote get-url origin | rev | cut -f 2- -d "." | rev) branch=$(git rev-parse --abbrev-ref HEAD); open ${base}; }; f"
     pr = "!f() { local base=$(git remote get-url origin | rev | cut -f 2- -d "." | rev) branch=$(git rev-parse --abbrev-ref HEAD); open ${base}/pull/new/${branch}; }; f"
     # log
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(blue)%s%Creset %C(dim cyan)<%an>%Creset %C(dim white)(%ci)%Creset' --abbrev-commit
+    lg = log --graph
     # push
     ps = push
     pf = push -f
