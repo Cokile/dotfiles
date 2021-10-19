@@ -28,6 +28,7 @@ brew "universal-ctags"
 # Casks
 cask "alacritty"
 cask "appcleaner"
+cask "calibre"
 cask "dropbox"
 cask "font-fira-code"
 cask "google-chrome"
