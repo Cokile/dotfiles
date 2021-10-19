@@ -10,10 +10,11 @@ require('packer').startup(function()
     use 'honza/vim-snippets'
     use 'kevinhwang91/nvim-bqf'
     
-    use 'justinmk/vim-sneak'
     use 'Raimondi/delimitMate'
     use 'mg979/vim-visual-multi'
     use 'preservim/nerdcommenter'
+    use 'phaazon/hop.nvim' 
+    
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
@@ -165,6 +166,10 @@ nmap <silent> [n <Plug>(coc-git-prevconflict)
 nmap <silent> ]n <Plug>(coc-git-nextconflict)
 
 
+" config hop.nvim
+nmap <silent> <leader>f :HopWord<CR>
+
+
 " configure LeaderF
 nnoremap <silent> <leader>p :LeaderfBufTag<CR>
 " need trailing space
@@ -185,14 +190,6 @@ let g:Lf_MruWildIgnore = {
             \ 'dir': ['.svn','.git','.hg'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
             \}
-
-
-" config vim-sneak
-let g:sneak#label = 1
-nmap <Leader>f <Plug>Sneak_s
-nmap <Leader>F <Plug>Sneak_S
-xmap <Leader>f <Plug>Sneak_s
-xmap <Leader>F <Plug>Sneak_S
 
 
 " Configure vim-visual-multi
@@ -270,5 +267,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
 }
+
+require'hop'.setup()
 EOF
 
