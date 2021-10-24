@@ -7,6 +7,9 @@ gui:
     lightTheme: true
     selectedRangeBgColor:
       - reverse
+    cherryPickedCommitBgColor:
+      - reverse
+  showFileTree: false
 
 git:
   branchLogCmd: "git log --graph"

@@ -71,8 +71,7 @@ alias gi=git
 alias gt=git
 
 # lazygit
-set -x CONFIG_DIR ~/.config/lazygit
-alias lag=lazygit
+alias lag='lazygit --use-config-file=$HOME/.config/lazygit/config.yml'
 
 ## nvim
 alias vim=nvim
