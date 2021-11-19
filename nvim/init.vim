@@ -76,8 +76,7 @@ set helplang=cn
 set sidescroll=10
 set showtabline=2
 
-set suffixesadd+=.py
-set formatoptions+=tBj
+set formatoptions-=t
 set completeopt-=preview
 set shortmess+=c
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
