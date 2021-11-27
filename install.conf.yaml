@@ -48,4 +48,5 @@
     ~/.tmux.conf: tmux/tmux.conf
 
     ~/.xvimrc: vim/xvimrc
+    ~/.ideavimrc: vim/ideavimrc
 

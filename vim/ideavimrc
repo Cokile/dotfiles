@@ -1,0 +1,79 @@
+let mapleader = " "
+
+set NERDTree
+set easymotion
+set surround
+set argtextobj
+set matchit
+
+set showmode
+set showcmd
+set scrolloff=3
+set visualbell
+
+set number
+set relativenumber
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+set timeout
+set timeoutlen=800
+
+set ideajoin
+set ideastatusicon=gray
+
+inoremap jk <Esc>
+
+nnoremap Y y$
+
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
+
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+nmap g; <Action>(JumpToLastChange)
+nmap g, <Action>(JumpToNextChange)
+
+nmap zo <Action>(ExpandRegion)
+nmap zc <Action>(CollapseRegion)
+
+nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(ShowUsages)
+nmap gp <Action>(GotoSuperMethod)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gh <Action>(CallHierarchy)
+
+nmap <C-w>s <Action>(SplitHorizontally)
+nmap <C-w>v <Action>(SplitVertically)
+nmap <leader>x <Action>(CloseContent)
+nmap <leader>X <Action>(ReopenClosedTab)
+
+nmap <Leader>fa <Action>(GotoAction)
+nmap <Leader>fc <Action>(GotoClass)
+nmap <Leader>fd <Action>(QuickJavaDoc)
+nmap <Leader>fs <Action>(GotoSymbol)
+nmap <Leader>ft <Action>(FileStructurePopup)
+
+nmap <Leader>rf <Action>(RenameFile)
+nmap <Leader>rn <Action>(RenameElement)
+
+" Xcode-like key bindings, `M` mean `⌘`
+nmap <M-1> :NERDTreeToggle<CR>
+nmap <M-b> <Action>(Build)
+nmap <M-r> <Action>(Debug)
+nmap <M-.> <Action>(Stop)
+nmap <M-i> <Action>(Profile)
+nmap <M-S-j> <Action>(SelectInProjectView)
+nmap <M-S-f> <Action>(FindInPath)
+nmap <M-S-k> <Action>(CleanBuildFolder)
