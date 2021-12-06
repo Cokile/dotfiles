@@ -12,7 +12,7 @@ require('packer').startup(function()
     
     use 'Raimondi/delimitMate'
     use 'mg979/vim-visual-multi'
-    use 'preservim/nerdcommenter'
+    use 'numToStr/Comment.nvim'
     use 'phaazon/hop.nvim' 
     
     use 'tpope/vim-repeat'
@@ -201,12 +201,6 @@ let g:VM_mouse_mappings = 1
 let g:VM_show_warnings = 0
 
 
-" configure nerdcommenter
-let g:NERDSpaceDelims = 1
-let g:NERDCommentEmptyLines = 1
-let g:NERDCustomDelimiters = { 'swift': { 'left': '//' } }
-
-
 " configure gruvbox_material
 let g:gruvbox_material_background = 'soft'
 let g:gruvbox_material_disable_italic_comment = 1
@@ -260,13 +254,18 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
   indent = {
-    enable = true
+    enable = true,
   },
   incremental_selection = {
     enable = true,
   },
 }
 
+-- cofig hop.nvim
 require'hop'.setup()
+
+
+-- cofig Comment.nvim
+require'Comment'.setup()
 EOF
 
