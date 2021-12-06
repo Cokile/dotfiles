@@ -29,13 +29,8 @@ EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " sets
-syntax on
-
 set termguicolors
-
 set background=light
-
-set encoding=utf-8
 
 set timeoutlen=800
 set updatetime=300
@@ -65,14 +60,13 @@ set signcolumn=yes
 set lazyredraw
 set cursorline
 
-set showcmd
-set wildmode=full
 set noshowmode
+
+set wildmode=full
 set cmdheight=2
-set laststatus=2
-set helplang=cn
-set sidescroll=10
-set showtabline=2
+
+set sidescrolloff=5
+set scrolloff=5
 
 set formatoptions-=t
 set completeopt-=preview
@@ -94,7 +88,6 @@ let g:ruby_host_prog = '/usr/local/opt/ruby/bin/ruby'
 let mapleader = " "
 
 nnoremap <silent><leader>s :w<CR>
-nnoremap <silent><leader>l :noh<CR>
 
 nnoremap <silent>[b :bprevious<CR>
 nnoremap <silent>]b :bnext<CR>
