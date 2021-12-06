@@ -20,9 +20,7 @@ require('packer').startup(function()
     use 'wellle/targets.vim'
     
     use 'sainnhe/gruvbox-material'
-    use 'itchyny/lightline.vim'
-    use 'josa42/vim-lightline-coc'
-    use 'mengelbrecht/lightline-bufferline'
+    use 'nvim-lualine/lualine.nvim'
 end)
 EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,44 +201,11 @@ let g:VM_show_warnings = 0
 
 " configure gruvbox_material
 let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_sign_column_background = 'none'
+let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_disable_italic_comment = 1
+let g:gruvbox_material_diagnostic_text_highlight=1
 colorscheme gruvbox-material
-
-
-" configure lightline
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox_material'
-let g:lightline.component_expand = {
-            \   'buffers': 'lightline#bufferline#buffers',
-            \  }
-let g:lightline.component_type = {
-            \   'buffers': 'tabsel',
-            \ }
-let g:lightline.active = {
-            \   'left': [
-            \     [ 'mode'],
-            \     [ 'filename' ],
-            \     [ 'readonly' ],
-            \     [ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings' ],
-            \   ],
-            \   'right': [
-            \     [ 'lineinfo' ],
-            \     [ 'percent' ],
-            \     [ 'filetype', 'fileencoding', 'fileformat' ],
-            \   ],
-            \ }
-let g:lightline.tabline = {
-            \   'left': [ [ 'buffers' ] ],
-            \   'right': [ [ '' ] ]
-            \ }
-" bufferline
-let g:lightline#bufferline#show_number = 1
-" coc
-let g:lightline#coc#indicator_errors="Error:"
-let g:lightline#coc#indicator_warnings="Warning:"
-let g:lightline#coc#indicator_info="Info:"
-let g:lightline#coc#indicator_hints="Hint:"
-call lightline#coc#register()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -267,5 +232,56 @@ require'hop'.setup()
 
 -- cofig Comment.nvim
 require'Comment'.setup()
+
+
+-- cofig lualine.nvim
+require'lualine'.setup {
+  options = {
+    icons_enabled = false,
+    theme = 'gruvbox-material',
+    section_separators = '',
+    component_separators = '|',
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'filename' },
+    lualine_c = {
+      {
+        'diagnostics',
+        sources = { 'coc' },
+        diagnostics_color = {
+          error = 'DiagnosticError',
+          warn  = 'DiagnosticWarn',
+          info  = 'DiagnosticInfo',
+          hint  = 'DiagnosticHint',
+        },
+      },
+    },
+    lualine_x = {
+      'encoding',
+      'fileformat',
+      'filetype',
+    },
+    lualine_y = { 'location' },
+    lualine_z = { 'progress' },
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {
+    lualine_a = { 'filename' },
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  extensions = { 'quickfix' },
+}
 EOF
 
