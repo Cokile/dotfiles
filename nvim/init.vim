@@ -1,26 +1,119 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua <<EOF
-require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
-    
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    
-    use { 'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension'}
-    use { 'neoclide/coc.nvim', branch = 'release' } 
-    use 'honza/vim-snippets'
-    use 'kevinhwang91/nvim-bqf'
-    
-    use 'Raimondi/delimitMate'
-    use 'mg979/vim-visual-multi'
-    use 'numToStr/Comment.nvim'
-    use 'phaazon/hop.nvim' 
-    
-    use 'tpope/vim-repeat'
-    use 'tpope/vim-surround'
-    use 'wellle/targets.vim'
-    
-    use 'sainnhe/gruvbox-material'
-    use 'nvim-lualine/lualine.nvim'
+vim.cmd("packadd packer.nvim")
+require('packer').startup(function(use)
+  use {'lewis6991/impatient.nvim', config = function() require('impatient') end }
+
+  use { 'wbthomason/packer.nvim', opt = true }
+  
+  use { 'Yggdroot/LeaderF', event = 'VimEnter', run = ':LeaderfInstallCExtension' }
+  use { 'honza/vim-snippets', event = 'InsertEnter' }
+  use { 'kevinhwang91/nvim-bqf', event = 'FileType qf' }
+  use { 'neoclide/coc.nvim', branch = 'release' } 
+  
+  use { 'mg979/vim-visual-multi', event = 'VimEnter' }
+  use { 'Raimondi/delimitMate', event = 'InsertEnter' }
+  use { 'tpope/vim-surround', event = 'VimEnter' }
+  use { 'wellle/targets.vim', event = 'VimEnter' }
+  use {
+    'numToStr/Comment.nvim',
+    opt = true,
+    keys = {
+      { 'n', 'gcc' }, { 'v', 'gc' }
+    },
+    config = function()
+      require('Comment').setup()
+    end
+  }
+  use { 
+    'phaazon/hop.nvim',
+    opt = true,
+    keys = {
+      { 'n', '<leader>f' }, { 'n', '<leader><leader>f' }
+    },
+    config = function()
+      require('hop').setup()
+      vim.api.nvim_set_keymap('n', '<leader>f', "<cmd>lua require'hop'.hint_char1()<cr>", { silent = true })
+      vim.api.nvim_set_keymap('n', '<leader><leader>f', "<cmd>lua require'hop'.hint_char2()<cr>", { silent = true })
+    end
+  } 
+  
+  use { 'tpope/vim-repeat', event = 'VimEnter' }
+  
+  use 'sainnhe/gruvbox-material'
+  use {
+    'nvim-lualine/lualine.nvim',
+    event = 'VimEnter',
+    config = function()
+      require('lualine').setup {
+        options = {
+          icons_enabled = false,
+          theme = 'gruvbox-material',
+          section_separators = '',
+          component_separators = '|',
+        },
+        sections = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'filename' },
+          lualine_c = {
+            {
+              'diagnostics',
+              sources = { 'coc' },
+              diagnostics_color = {
+                error = 'DiagnosticError',
+                warn  = 'DiagnosticWarn',
+                info  = 'DiagnosticInfo',
+                hint  = 'DiagnosticHint',
+              },
+            },
+          },
+          lualine_x = {
+            'encoding',
+            'fileformat',
+            'filetype',
+          },
+          lualine_y = { 'location' },
+          lualine_z = { 'progress' },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { 'filename' },
+          lualine_x = { 'location' },
+          lualine_y = {},
+          lualine_z = {}
+        },
+        tabline = {
+          lualine_a = { 'buffers' },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = { 'tabs' }
+        },
+        extensions = { 'quickfix' },
+      }
+    end
+  }
+  use { 
+    'nvim-treesitter/nvim-treesitter',
+    opt = true,
+    event = 'BufRead',
+    run = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+        incremental_selection = {
+          enable = true,
+        },
+      }
+    end
+  }
 end)
 EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -156,8 +249,6 @@ nmap <silent> [n <Plug>(coc-git-prevconflict)
 nmap <silent> ]n <Plug>(coc-git-nextconflict)
 
 
-" config hop.nvim
-nmap <silent> <leader>f :HopWord<CR>
 
 
 " configure LeaderF
@@ -200,81 +291,4 @@ let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_diagnostic_text_highlight=1
 colorscheme gruvbox-material
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" lua plugins configuration
-lua <<EOF
--- config nvim-treesitter
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true,
-  },
-  incremental_selection = {
-    enable = true,
-  },
-}
-
--- cofig hop.nvim
-require'hop'.setup()
-
-
--- cofig Comment.nvim
-require'Comment'.setup()
-
-
--- cofig lualine.nvim
-require'lualine'.setup {
-  options = {
-    icons_enabled = false,
-    theme = 'gruvbox-material',
-    section_separators = '',
-    component_separators = '|',
-  },
-  sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'filename' },
-    lualine_c = {
-      {
-        'diagnostics',
-        sources = { 'coc' },
-        diagnostics_color = {
-          error = 'DiagnosticError',
-          warn  = 'DiagnosticWarn',
-          info  = 'DiagnosticInfo',
-          hint  = 'DiagnosticHint',
-        },
-      },
-    },
-    lualine_x = {
-      'encoding',
-      'fileformat',
-      'filetype',
-    },
-    lualine_y = { 'location' },
-    lualine_z = { 'progress' },
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { 'filename' },
-    lualine_x = { 'location' },
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {
-    lualine_a = { 'filename' },
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  extensions = { 'quickfix' },
-}
-EOF
 
