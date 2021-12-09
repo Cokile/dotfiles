@@ -10,6 +10,14 @@ require('packer').startup(function(use)
   use { 'honza/vim-snippets', event = 'InsertEnter' }
   use { 'kevinhwang91/nvim-bqf', event = 'FileType qf' }
   use { 'neoclide/coc.nvim', branch = 'release' } 
+  use {
+    'lewis6991/gitsigns.nvim',
+    event = 'BufReadPre',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   
   use { 'mg979/vim-visual-multi', event = 'VimEnter' }
   use { 'Raimondi/delimitMate', event = 'InsertEnter' }
@@ -245,8 +253,6 @@ nnoremap <silent> <leader>4 :CocDiagnostics<CR>
 nnoremap <silent> <leader>6 :CocOutline<CR>
 nmap <silent> gd :call <SID>go_to_definition()<CR>
 nmap <silent> gr :call <SID>go_to_declaration()<CR>
-nmap <silent> [n <Plug>(coc-git-prevconflict)
-nmap <silent> ]n <Plug>(coc-git-nextconflict)
 
 
 
