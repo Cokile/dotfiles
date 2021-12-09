@@ -242,19 +242,37 @@ function! s:go_to_declaration()
   endif
 endfunction
 
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<Tab>" : coc#refresh()
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 nnoremap <silent> <leader>1 :CocCommand explorer<CR>
 nnoremap <silent> <leader>4 :CocDiagnostics<CR>
 nnoremap <silent> <leader>6 :CocOutline<CR>
+nnoremap <silent> <leader>9 :call <SID>show_documentation()<CR>
+
 nmap <silent> gd :call <SID>go_to_definition()<CR>
 nmap <silent> gr :call <SID>go_to_declaration()<CR>
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>qf <Plug>(coc-fix-current)
 
 
 " configure LeaderF

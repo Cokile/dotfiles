@@ -23,5 +23,7 @@
     "sourcekit.sdk": "iphonesimulator",
     "sourcekit.targetArch": "x86_64-apple-ios14.5-simulator",
     // coc-explorer
-    "explorer.openAction.strategy": "vsplit"
+    "explorer.openAction.strategy": "vsplit",
+    // rust-analizer
+    "rust-analyzer.checkOnSave.command": "clippy",
 }
