@@ -201,9 +201,9 @@ inoremap jk <Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " autocmd
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd Filetype proto setlocal ts=4 sts=4 sw=4 noexpandtab
-autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 autocmd BufNewFile,BufRead *.fish set ft=fish
 autocmd BufNewFile,BufRead *.swift set ft=swift
@@ -276,11 +276,8 @@ nmap <leader>qf <Plug>(coc-fix-current)
 
 
 " configure LeaderF
-nnoremap <silent> <leader>p :LeaderfBufTag<CR>
-" need trailing space
-nnoremap <leader>g :Leaderf rg --stayOpen --bottom --all-buffers -S -e 
-nnoremap <leader><leader>g :Leaderf rg --stayOpen --bottom -S -e 
 let g:Lf_ShortcutF = '<C-P>'
+let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowPosition = 'bottom'
 let g:Lf_WindowHeight = 0.22
 let g:Lf_ShowDevIcons = 0
@@ -295,6 +292,10 @@ let g:Lf_MruWildIgnore = {
             \ 'dir': ['.svn','.git','.hg'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
             \}
+
+nnoremap <silent> <leader>p :LeaderfBufTag<CR>
+" need trailing space
+nnoremap <leader>g :Leaderf rg --stayOpen -S -e 
 
 
 " Configure vim-visual-multi
