@@ -215,6 +215,16 @@ autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " classic plugins configuration
 " configure coc
+let g:coc_global_extensions = [
+            \ 'coc-explorer',
+            \ 'coc-go',
+            \ 'coc-json',
+            \ 'coc-pyright',
+            \ 'coc-rust-analyzer',
+            \ 'coc-snippets',
+            \ 'coc-solargraph',
+            \ 'coc-sourcekit'
+            \ ]
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
