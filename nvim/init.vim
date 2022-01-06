@@ -19,9 +19,9 @@ require('packer').startup(function(use)
     end
   }
   
+  use { 'machakann/vim-sandwich', event = 'VimEnter' }
   use { 'mg979/vim-visual-multi', event = 'VimEnter' }
   use { 'Raimondi/delimitMate', event = 'InsertEnter' }
-  use { 'tpope/vim-surround', event = 'VimEnter' }
   use { 'wellle/targets.vim', event = 'VimEnter' }
   use {
     'numToStr/Comment.nvim',
