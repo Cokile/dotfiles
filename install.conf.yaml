@@ -41,8 +41,6 @@
     ~/.gruvbox.dircolors: themes/gruvbox.dircolors
     ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Rei.xccolortheme: themes/Rei.xccolortheme
 
-    ~/.tigrc: tig/tigrc
-
     ~/.tmux.conf: tmux/tmux.conf
 
     ~/.xvimrc: vim/xvimrc

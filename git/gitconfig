@@ -74,6 +74,7 @@
     smudge = git lfs smudge %f
 [interactive]
     diffFilter = delta --color-only --relative-paths
+
 [delta]
     features = line-numbers decorations
     whitespace-error-style = 22 reverse
@@ -86,3 +87,12 @@
     line-numbers-plus-style = brightgreen
     hunk-header-style = omit
     syntax-theme = none
+
+[tig "color"]
+    cursor = 59 187
+    title-blur = 59 187
+    title-focus = 59 187
+[tig "bind"]
+    generic = <C-g> move-first-line
+    generic = G move-last-line
+    blob = H !tig log %(file)
