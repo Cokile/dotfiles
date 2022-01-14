@@ -9,6 +9,8 @@ gui:
       - reverse
     cherryPickedCommitBgColor:
       - reverse
+  authorColors:
+    '*': '#B47109'
   showFileTree: false
 
 git:
