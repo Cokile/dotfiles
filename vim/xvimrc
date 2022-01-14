@@ -7,8 +7,8 @@ imap jk <Esc>
 
 nmap <C-k> 5k
 nmap <C-j> 5j
-nmap <C-h> :pj<CR>
-nmap <C-l> :nj<CR>
+nmap <C-o> :pj<CR>
+nmap <C-i> :nj<CR>
 
 nmap <Space>s :xcmenucmd Save<CR>
 nmap <Space>w :xcmenucmd Editor<CR>
