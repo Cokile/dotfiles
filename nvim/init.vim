@@ -179,7 +179,6 @@ set shortmess+=c
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "hosts
 let g:python3_host_prog = '/usr/local/bin/python3'
-let g:ruby_host_prog = '/usr/local/opt/ruby/bin/ruby'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -306,6 +305,11 @@ let g:Lf_MruWildIgnore = {
 nnoremap <silent> <leader>p :LeaderfBufTag<CR>
 " need trailing space
 nnoremap <leader>g :Leaderf rg --stayOpen -S -e 
+
+
+" Config vim-sandwich
+" disable textobj-sandwich since targets.vim has already defined these ones
+let g:textobj_sandwich_no_default_key_mappings = 1
 
 
 " Configure vim-visual-multi
