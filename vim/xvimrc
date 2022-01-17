@@ -2,16 +2,21 @@ set hlsearch
 set ignorecase
 set incsearch
 set smartcase
+set timeoutlen=800
 
 imap jk <Esc>
 
 nmap <C-k> 5k
 nmap <C-j> 5j
+
 nmap <C-o> :pj<CR>
 nmap <C-i> :nj<CR>
 
-nmap <Space>s :xcmenucmd Save<CR>
-nmap <Space>w :xcmenucmd Editor<CR>
-nmap <Space>v :xcmenucmd Editor Below<CR>
-nmap <C-p> :xcmenucmd Open Quickly...<CR>
+nmap <c-w>s :xcmenucmd Editor Below<CR>
+nmap <c-w>v :xcmenucmd Editor<CR>
 
+nmap <Space>s :xcmenucmd Save<CR>
+nmap <Space>rn :xcmenucmd Rename...<CR>
+
+nmap gb :xcmenucmd Show Last Change For Line<CR>
+nmap gh :xcmenucmd Find Call Hierarchy<CR>
