@@ -19,9 +19,9 @@ require('packer').startup(function(use)
     end
   }
   
-  use { 'machakann/vim-sandwich', event = 'VimEnter' }
   use { 'mg979/vim-visual-multi', event = 'VimEnter' }
   use { 'Raimondi/delimitMate', event = 'InsertEnter' }
+  use { 'tpope/vim-surround', event = 'VimEnter' }
   use { 'wellle/targets.vim', event = 'VimEnter' }
   use {
     'numToStr/Comment.nvim',
@@ -305,11 +305,6 @@ let g:Lf_MruWildIgnore = {
 nnoremap <silent> <leader>p :LeaderfBufTag<CR>
 " need trailing space
 nnoremap <leader>g :Leaderf rg --stayOpen -S -e 
-
-
-" Config vim-sandwich
-" disable textobj-sandwich since targets.vim has already defined these ones
-let g:textobj_sandwich_no_default_key_mappings = 1
 
 
 " Configure vim-visual-multi
