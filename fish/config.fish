@@ -11,6 +11,7 @@ eval (gdircolors -c ~/.gruvbox.dircolors)
 # EXPORTS
 set -gx LANG en_US.UTF-8
 set -x EDITOR nvim
+set -x MANPAGER 'nvim +Man!'
 
 ## go
 set -x GOPATH ~/go
