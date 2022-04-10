@@ -1,6 +1,7 @@
 startuppopupversion: 1
 notARepository: "skip"
 reporting: "off"
+promptToReturnFromSubprocess: false
 
 gui:
   theme:
@@ -19,3 +20,6 @@ git:
     colorarg: always
     pager: delta --paging=never --diff-highlight
   
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
