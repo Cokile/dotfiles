@@ -8,7 +8,7 @@ require('packer').startup(function(use)
   
   use { 'Yggdroot/LeaderF', event = 'VimEnter', run = ':LeaderfInstallCExtension' }
   use { 'honza/vim-snippets', event = 'InsertEnter' }
-  use { 'kevinhwang91/nvim-bqf', event = 'FileType qf' }
+  use { 'kevinhwang91/nvim-bqf', ft = 'qf'}
   use { 'neoclide/coc.nvim', branch = 'release' } 
   use {
     'lewis6991/gitsigns.nvim',
