@@ -15,11 +15,14 @@ brew "fzf"
 brew "git"
 brew "git-delta"
 brew "lazygit"
+brew "lua"
 brew "mas"
 brew "neovim"
 brew "python@3.9"
 brew "ripgrep"
 brew "ruby"
+brew "rustup-init"
+
 brew "tealdeer"
 brew "tig"
 brew "tmux"
@@ -34,7 +37,6 @@ cask "google-chrome"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask 'maestral'
-cask "mtmr"
 cask "squirrel"
 cask "swiftbar"
 cask "telegram"
@@ -44,3 +46,4 @@ cask "visual-studio-code"
 
 # Mac App Store Apps
 mas "Reeder 4", id: 1449412482
+mas "WeChat", id: 836500024
