@@ -6,6 +6,7 @@
 
 - clean:
     ~/:
+      force: true
     ~/.config:
       recursive: true
     ~/Library/Developer/Xcode/UserData:
