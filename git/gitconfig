@@ -54,7 +54,7 @@
     psu = "!f() { local branch=$(git rev-parse --abbrev-ref HEAD); git push -u origin ${branch}; }; f"
     # pull
     plm = pull origin master
-    cpp = "!f() { git cm && git plm && git pre origin; }; f"
+    cpp = "!f() { git cm && git plm && git pre; }; f"
     # rebase
     rbi = rebase -i
     rbc = rebase --continue
