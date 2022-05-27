@@ -86,7 +86,7 @@
     plus-emph-style = "#f5e5b7" brightgreen
     line-numbers-plus-style = brightgreen
     hunk-header-style = omit
-    syntax-theme = none
+    syntax-theme = gruvbox-light
 
 [tig "color"]
     cursor = 59 187
