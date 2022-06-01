@@ -6,6 +6,12 @@
     ],
     "outline.sortBy": "position",
     "outline.splitCommand": "botright 50vs",
+    "semanticTokens.filetypes": [
+        "go",
+        "lua",
+        "rust",
+        "swift"
+    ],
     // coc-snippets
     "snippets.ultisnips.directories": [
         "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips"

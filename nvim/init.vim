@@ -36,12 +36,11 @@ require('packer').startup(function(use)
     'phaazon/hop.nvim',
     opt = true,
     keys = {
-      { 'n', '<leader>f' }, { 'n', '<leader><leader>f' }
+      { 'n', '<leader><leader>f' }
     },
     config = function()
       require('hop').setup()
-      vim.api.nvim_set_keymap('n', '<leader>f', "<cmd>lua require'hop'.hint_char1()<cr>", { silent = true })
-      vim.api.nvim_set_keymap('n', '<leader><leader>f', "<cmd>lua require'hop'.hint_char2()<cr>", { silent = true })
+      vim.keymap.set('n', '<leader><leader>f', "<cmd>lua require'hop'.hint_char1()<cr>", { silent = true })
     end
   } 
   
@@ -258,6 +257,24 @@ function! s:show_documentation()
   endif
 endfunction
 
+function! s:toggle_outline() abort
+  let winid = coc#window#find('cocViewId', 'OUTLINE')
+  if winid == -1
+    call CocActionAsync('showOutline', 1)
+  else
+    call coc#window#close(winid)
+  endif
+endfunction
+
+function! s:toggle_call_hierarchy() abort
+  let winid = coc#window#find('cocViewId', 'calls')
+  if winid == -1
+    call CocActionAsync('showIncomingCalls')
+  else
+    call coc#window#close(winid)
+  endif
+endfunction
+
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<Tab>" : coc#refresh()
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -267,16 +284,17 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nnoremap <silent> <leader>1 :CocCommand explorer<CR>
 nnoremap <silent> <leader>4 :CocDiagnostics<CR>
-nnoremap <silent> <leader>6 :CocOutline<CR>
-nnoremap <silent> <leader>9 :call <SID>show_documentation()<CR>
+
+nnoremap <silent> <leader>fd :call <SID>show_documentation()<CR>
+nnoremap <silent> <leader>fh :call <SID>toggle_call_hierarchy()<CR>
+nnoremap <silent> <leader>ft :call <SID>toggle_outline()<CR>
+
+nmap <silent> <leader>ac <Plug>(coc-codeaction)
+nmap <silent> <leader>rn <Plug>(coc-rename)
+nmap <silent> <leader>qf <Plug>(coc-fix-current)
 
 nmap <silent> gd :call <SID>go_to_definition()<CR>
 nmap <silent> gr :call <SID>go_to_declaration()<CR>
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>qf <Plug>(coc-fix-current)
 
 
 " configure LeaderF
