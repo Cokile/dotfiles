@@ -109,13 +109,8 @@ require('packer').startup(function(use)
     run = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup {
+        ensure_installed = { "go", "lua", "python", "ruby", "rust", "swift" },
         highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
-        incremental_selection = {
           enable = true,
         },
       }
