@@ -211,15 +211,16 @@ autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 " classic plugins configuration
 " configure coc
 let g:coc_global_extensions = [
-            \ 'coc-explorer',
-            \ 'coc-go',
-            \ 'coc-json',
-            \ 'coc-pyright',
-            \ 'coc-rust-analyzer',
-            \ 'coc-snippets',
-            \ 'coc-solargraph',
-            \ 'coc-sourcekit'
-            \ ]
+  \ 'coc-explorer',
+  \ 'coc-go',
+  \ 'coc-json',
+  \ 'coc-pyright',
+  \ 'coc-rust-analyzer',
+  \ 'coc-snippets',
+  \ 'coc-solargraph',
+  \ 'coc-sourcekit'
+  \ ]
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
@@ -304,16 +305,12 @@ let g:Lf_WindowPosition = 'bottom'
 let g:Lf_WindowHeight = 0.22
 let g:Lf_ShowDevIcons = 0
 let g:Lf_CursorBlink = 0
-let g:Lf_Ctags = '/usr/local/bin/ctags'
-let g:Lf_DefaultExternalTool = "rg"
-let g:Lf_WildIgnore = {
-            \ 'dir': ['.svn','.git','.hg'],
-            \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
-            \}
-let g:Lf_MruWildIgnore = {
-            \ 'dir': ['.svn','.git','.hg'],
-            \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
-            \}
+let g:Lf_WildIgnore = {}
+let g:Lf_WildIgnore["dir"] = ['.svn','.git','.hg']
+let g:Lf_WildIgnore["file"] = ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
+let g:Lf_MruWildIgnore = {}
+let g:Lf_MruWildIgnore["dir"] = ['.svn','.git','.hg']
+let g:Lf_MruWildIgnore["file"] = ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 
 nnoremap <silent> <leader>p :LeaderfBufTag<CR>
 " need trailing space
