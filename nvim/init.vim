@@ -14,7 +14,20 @@ require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPre',
     config = function()
-      require('gitsigns').setup()
+      require('gitsigns').setup {
+        _extmark_signs = true,
+        current_line_blame_opts = {
+          relative_time = true
+        },
+        preview_config = {
+          border = 'none',
+        },
+        on_attach = function(bufnr)
+          vim.keymap.set('n', '<leader>hb', function() package.loaded.gitsigns.blame_line{ full = true } end, { silent = true, buffer = bufnr })
+          vim.keymap.set('n', '<leader>hp', package.loaded.gitsigns.preview_hunk, { silent = true, buffer = bufnr })
+          vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>', { silent = true, buffer = bufnr })
+        end
+      }
     end
   }
   
