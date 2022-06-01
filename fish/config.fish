@@ -3,7 +3,6 @@
 set fish_key_bindings fish_user_key_bindings
 
 ## themes
-# fish_config theme choose rei
 eval (gdircolors -c ~/.gruvbox.dircolors)
 
 

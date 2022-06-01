@@ -16,3 +16,9 @@ echo "Changing fish theme..."
 fish -c 'yes | fish_config theme save rei'
 echo "Fish theme changed."
 
+# install plugins
+echo "Installing fish plugings..."
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher update
+echo "Fish plugins installed"
+
