@@ -22,8 +22,9 @@ function run_install_scripts {
 function install_dotfiles {
     # install dotbot with pip3 if needed first
     if [[ $(command -v dotbot) == "" ]]; then
+        echo '+++++++Installing dotbot+++++++'
         pip3 install dotbot
-        echo
+        echo -e '-----Dotbot is installed------\n'
     fi
     echo '+++++++Installing dotfiles+++++++'
     dotbot -c install.conf.yaml
@@ -60,6 +61,6 @@ fi
 install_dotfiles
 if $BOOTSTRAP; then
     run_install_scripts 'bootstrap.post.sh'
-    echo "Now quit your terminal and enjoy your journey with Alacritty + fish + NeoVim ;-)"
+    echo "Now quit your terminal and enjoy your journey with Alacritty + tumx + fish + Neovim ;-)"
 fi
 
