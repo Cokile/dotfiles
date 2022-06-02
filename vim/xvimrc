@@ -12,11 +12,24 @@ nmap <C-j> 5j
 nmap <C-o> :pj<CR>
 nmap <C-i> :nj<CR>
 
+nmap <C-p> :xcmenucmd Open Quickly...<CR>
+
 nmap <c-w>s :xcmenucmd Editor Below<CR>
 nmap <c-w>v :xcmenucmd Editor<CR>
 
 nmap <Space>s :xcmenucmd Save<CR>
+
+nmap <Space>hb :xcmenucmd Show Last Change For Line<CR>
+
+nmap <Space>fa :xcmenucmd Show Code Actions<CR>
+nmap <Space>fh :xcmenucmd Find Call Hierarchy<CR>
+nmap <Space>ft :xcmenucmd Show Document Items<CR>
+
 nmap <Space>rn :xcmenucmd Rename...<CR>
 
-nmap gb :xcmenucmd Show Last Change For Line<CR>
-nmap gh :xcmenucmd Find Call Hierarchy<CR>
+nmap [d :xcmenucmd Jump to Previous Issue<CR>
+nmap ]d :xcmenucmd Jump to Next Issue<CR>
+
+nmap [g :xcmenucmd Jump to Previous Change<CR>
+nmap ]g :xcmenucmd Jump to Next Change<CR>
+

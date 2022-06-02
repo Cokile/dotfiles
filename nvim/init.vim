@@ -23,6 +23,18 @@ require('packer').startup(function(use)
           border = 'none',
         },
         on_attach = function(bufnr)
+          vim.keymap.set('n', '[g', function()
+            if vim.wo.diff then return '[g' end
+            vim.schedule(function() package.loaded.gitsigns.prev_hunk() end)
+            return '<Ignore>'
+          end, { expr = true, buffer = bufnr })
+
+          vim.keymap.set('n', ']g', function()
+            if vim.wo.diff then return ']g' end
+            vim.schedule(function() package.loaded.gitsigns.next_hunk() end)
+            return '<Ignore>'
+          end, { expr = true, buffer = bufnr })
+
           vim.keymap.set('n', '<leader>hb', function() package.loaded.gitsigns.blame_line{ full = true } end, { silent = true, buffer = bufnr })
           vim.keymap.set('n', '<leader>hp', package.loaded.gitsigns.preview_hunk, { silent = true, buffer = bufnr })
           vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>', { silent = true, buffer = bufnr })
@@ -275,7 +287,7 @@ endfunction
 function! s:toggle_outline() abort
   let winid = coc#window#find('cocViewId', 'OUTLINE')
   if winid == -1
-    call CocActionAsync('showOutline', 1)
+    call CocActionAsync('showOutline', 0)
   else
     call coc#window#close(winid)
   endif
@@ -300,16 +312,20 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nnoremap <silent> <leader>1 :CocCommand explorer<CR>
 nnoremap <silent> <leader>4 :CocDiagnostics<CR>
 
+nnoremap <silent> <leader>fa <Plug>(coc-codeaction)
 nnoremap <silent> <leader>fd :call <SID>show_documentation()<CR>
 nnoremap <silent> <leader>fh :call <SID>toggle_call_hierarchy()<CR>
 nnoremap <silent> <leader>ft :call <SID>toggle_outline()<CR>
 
-nmap <silent> <leader>ac <Plug>(coc-codeaction)
 nmap <silent> <leader>rn <Plug>(coc-rename)
 nmap <silent> <leader>qf <Plug>(coc-fix-current)
 
 nmap <silent> gd :call <SID>go_to_definition()<CR>
 nmap <silent> gr :call <SID>go_to_declaration()<CR>
+nmap <silent> gi <Plug>(coc-implementation)
+
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 
 " configure LeaderF
@@ -319,9 +335,11 @@ let g:Lf_WindowPosition = 'bottom'
 let g:Lf_WindowHeight = 0.22
 let g:Lf_ShowDevIcons = 0
 let g:Lf_CursorBlink = 0
+
 let g:Lf_WildIgnore = {}
 let g:Lf_WildIgnore["dir"] = ['.svn','.git','.hg']
 let g:Lf_WildIgnore["file"] = ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
+
 let g:Lf_MruWildIgnore = {}
 let g:Lf_MruWildIgnore["dir"] = ['.svn','.git','.hg']
 let g:Lf_MruWildIgnore["file"] = ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
@@ -331,7 +349,7 @@ nnoremap <silent> <leader>p :LeaderfBufTag<CR>
 nnoremap <leader>g :Leaderf rg --stayOpen -S -e 
 
 
-" Configure vim-visual-multi
+" configure vim-visual-multi
 let g:VM_maps = {}
 let g:VM_maps["Undo"] = 'u'
 let g:VM_maps["Redo"] = '<C-r>'
