@@ -50,4 +50,4 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux -2"
+    - 'tmux attach || tmux -2'

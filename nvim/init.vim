@@ -231,7 +231,8 @@ let g:coc_global_extensions = [
   \ 'coc-rust-analyzer',
   \ 'coc-snippets',
   \ 'coc-solargraph',
-  \ 'coc-sourcekit'
+  \ 'coc-sourcekit',
+  \ 'coc-yaml',
   \ ]
 
 function! s:check_back_space() abort
