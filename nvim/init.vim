@@ -209,6 +209,7 @@ let g:did_load_filetypes = 0
 let mapleader = " "
 
 nnoremap <silent><leader>s :w<CR>
+nnoremap <silent><leader>l :noh<CR>
 
 nnoremap <silent>[b :bprevious<CR>
 nnoremap <silent>]b :bnext<CR>
@@ -353,8 +354,8 @@ nnoremap <leader>g :Leaderf rg --stayOpen -S -e
 let g:VM_maps = {}
 let g:VM_maps["Undo"] = 'u'
 let g:VM_maps["Redo"] = '<C-r>'
-let g:VM_maps["Add Cursor Down"] = '<C-j>'
-let g:VM_maps["Add Cursor Up"] = '<C-k>'
+let g:VM_maps["Add Cursor Down"] = '<C-l>'
+let g:VM_maps["Add Cursor Up"] = '<C-h>'
 let g:VM_mouse_mappings = 1
 let g:VM_show_warnings = 0
 
