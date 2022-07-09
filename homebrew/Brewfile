@@ -37,12 +37,11 @@ cask "google-chrome"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask 'maestral'
-cask "squirrel"
-cask "swiftbar"
 cask "telegram"
 cask "the-unarchiver"
 cask "typora"
 cask "visual-studio-code"
+cask "xbar"
 
 # Mac App Store Apps
 mas "Reeder 4", id: 1449412482
