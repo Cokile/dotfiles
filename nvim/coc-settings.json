@@ -4,7 +4,6 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "*"
     ],
-    "notification.border": false,
     "outline.sortBy": "position",
     "outline.splitCommand": "botright 50vs",
     "semanticTokens.filetypes": [

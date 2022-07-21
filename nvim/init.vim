@@ -332,8 +332,7 @@ nmap <silent> ]d <Plug>(coc-diagnostic-next)
 " configure LeaderF
 let g:Lf_ShortcutF = '<C-P>'
 let g:Lf_WorkingDirectoryMode = 'Ac'
-let g:Lf_WindowPosition = 'bottom'
-let g:Lf_WindowHeight = 0.22
+let g:Lf_WindowPosition = 'popup'
 let g:Lf_ShowDevIcons = 0
 let g:Lf_CursorBlink = 0
 
