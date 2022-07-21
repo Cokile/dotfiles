@@ -6,6 +6,8 @@ promptToReturnFromSubprocess: false
 gui:
   theme:
     lightTheme: true
+    selectedLineBgColor:
+      - '#EDDEB5'
     selectedRangeBgColor:
       - reverse
     cherryPickedCommitBgColor:
@@ -13,6 +15,7 @@ gui:
   authorColors:
     '*': '#B47109'
   showFileTree: false
+  showBottomLine: false
 
 git:
   branchLogCmd: "git log --graph"
