@@ -133,7 +133,7 @@ require('packer').startup(function(use)
     run = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { "go", "lua", "python", "ruby", "rust", "swift" },
+        ensure_installed = { "go", "lua", "python", "ruby", "rust", "swift", "typescript" },
         highlight = {
           enable = true,
         },
@@ -223,6 +223,7 @@ inoremap jk <Esc>
 " autocmd
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd Filetype proto setlocal ts=4 sts=4 sw=4 noexpandtab
 
@@ -237,6 +238,7 @@ autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 " classic plugins configuration
 " configure coc
 let g:coc_global_extensions = [
+  \ 'coc-eslint',
   \ 'coc-explorer',
   \ 'coc-go',
   \ 'coc-json',
@@ -245,6 +247,7 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-solargraph',
   \ 'coc-sourcekit',
+  \ 'coc-tsserver',
   \ 'coc-yaml',
   \ ]
 

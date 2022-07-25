@@ -10,10 +10,13 @@
         "go",
         "lua",
         "rust",
-        "swift"
+        "swift",
+        "ts",
     ],
+    // coc-eslint
+    "eslint.autoFixOnSave": true,
     // coc-explorer
-    "explorer.openAction.strategy": "vsplit",
+    "explorer.openAction.strategy": "previousBuffer",
     // coc-go
     "go.goplsOptions": {
         "gofumpt": true,
