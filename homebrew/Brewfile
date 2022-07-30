@@ -14,6 +14,7 @@ brew "fish"
 brew "fzf"
 brew "git"
 brew "git-delta"
+brew "jq"
 brew "lazygit"
 brew "lua"
 brew "mas"
@@ -44,5 +45,4 @@ cask "visual-studio-code"
 cask "xbar"
 
 # Mac App Store Apps
-mas "Reeder 4", id: 1449412482
 mas "WeChat", id: 836500024
