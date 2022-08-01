@@ -182,14 +182,12 @@ set cursorline
 set noshowmode
 
 set wildmode=full
-set cmdheight=2
 
 set sidescrolloff=5
 set scrolloff=5
 
 set formatoptions-=t
 set completeopt-=preview
-set shortmess+=c
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -253,38 +251,14 @@ let g:coc_global_extensions = [
 
 function! s:check_back_space() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-function! s:go_to_definition()
-  if CocAction('jumpDefinition')
-    return v:true
-  endif
-
-  let ret = execute("silent! normal \<C-]>")
-  if ret =~ "Error" || ret =~ "错误"
-    call searchdecl(expand('<cword>'))
-  endif
-endfunction
-
-function! s:go_to_declaration()
-  if CocAction('jumpDeclaration')
-    return v:true
-  endif
-
-  let ret = execute("silent! normal \<C-]>")
-  if ret =~ "Error" || ret =~ "错误"
-    call searchdecl(expand('<cword>'))
-  endif
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
+  if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+    call feedkeys('K', 'in')
   endif
 endfunction
 
@@ -306,9 +280,9 @@ function! s:toggle_call_hierarchy() abort
   endif
 endfunction
 
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<Tab>" : coc#refresh()
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : <SID>check_back_space() ? "\<Tab>" : coc#refresh()
+inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -324,8 +298,8 @@ nnoremap <silent> <leader>ft :call <SID>toggle_outline()<CR>
 nmap <silent> <leader>rn <Plug>(coc-rename)
 nmap <silent> <leader>qf <Plug>(coc-fix-current)
 
-nmap <silent> gd :call <SID>go_to_definition()<CR>
-nmap <silent> gr :call <SID>go_to_declaration()<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gi <Plug>(coc-implementation)
 
 nmap <silent> [d <Plug>(coc-diagnostic-prev)

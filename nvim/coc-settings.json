@@ -13,6 +13,8 @@
         "swift",
         "ts",
     ],
+    "suggest.noselect": true,
+    "suggest.virtualText": true,
     // coc-eslint
     "eslint.autoFixOnSave": true,
     // coc-explorer
