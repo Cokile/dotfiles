@@ -194,8 +194,6 @@ set completeopt-=preview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " globals
-let g:python3_host_prog = '/usr/local/bin/python3'
-
 let g:do_filetype_lua = 1
 let g:did_load_filetypes = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
