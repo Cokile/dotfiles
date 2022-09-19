@@ -6,13 +6,9 @@
     ],
     "outline.sortBy": "position",
     "outline.splitCommand": "botright 50vs",
-    "semanticTokens.filetypes": [
-        "go",
-        "lua",
-        "rust",
-        "swift",
-        "ts",
-    ],
+    "[go][json][lua][rust][swift][typescript]": {
+        "semanticTokens.enable": true
+    },
     "suggest.noselect": true,
     "suggest.virtualText": true,
     // coc-eslint
@@ -36,5 +32,5 @@
     "solargraph.formatting": true,
     // coc-sourcekit
     "sourcekit.sdk": "iphonesimulator",
-    "sourcekit.targetArch": "x86_64-apple-ios14.5-simulator",
+    "sourcekit.targetArch": "x86_64-apple-ios14.5-simulator"
 }
