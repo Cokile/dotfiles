@@ -133,7 +133,7 @@ require('packer').startup(function(use)
     run = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { "go", "lua", "python", "ruby", "rust", "swift", "typescript" },
+        ensure_installed = {  "fish", "go", "lua", "python", "ruby", "rust", "swift", "typescript" },
         highlight = {
           enable = true,
         },
@@ -223,7 +223,6 @@ autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd Filetype proto setlocal ts=4 sts=4 sw=4 noexpandtab
 
-autocmd BufNewFile,BufRead *.fish set ft=fish
 autocmd BufNewFile,BufRead *.swift set ft=swift
 autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
