@@ -6,11 +6,12 @@
     ],
     "outline.sortBy": "position",
     "outline.splitCommand": "botright 50vs",
+    "suggest.noselect": true,
+    "suggest.virtualText": true,
+    // language-override
     "[go][json][lua][rust][swift][typescript]": {
         "semanticTokens.enable": true
     },
-    "suggest.noselect": true,
-    "suggest.virtualText": true,
     // coc-eslint
     "eslint.autoFixOnSave": true,
     // coc-explorer
