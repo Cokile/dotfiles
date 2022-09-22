@@ -209,6 +209,7 @@ nnoremap <silent><leader>l :noh<CR>
 
 nnoremap <silent>[b :bprevious<CR>
 nnoremap <silent>]b :bnext<CR>
+nnoremap <silent><A-q> :bd<CR>
 
 inoremap jk <Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
