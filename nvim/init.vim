@@ -136,6 +136,7 @@ require('packer').startup(function(use)
         ensure_installed = {  "fish", "go", "lua", "python", "ruby", "rust", "swift", "typescript" },
         highlight = {
           enable = true,
+          disable = { 'help' },
         },
       }
     end
@@ -188,14 +189,6 @@ set scrolloff=5
 
 set formatoptions-=t
 set completeopt-=preview
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" globals
-let g:do_filetype_lua = 1
-let g:did_load_filetypes = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
