@@ -30,7 +30,7 @@ colors:
     focused_match:
      foreground: '#EBD9AE'
      background: '#BF6D00'
-    bar:
+    footer_bar:
      background: '#654735'
      foreground: '#F2E5BC'  
 
