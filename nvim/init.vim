@@ -240,7 +240,7 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ ]
 
-function! s:check_back_space() abort
+function! s:check_backspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -271,7 +271,7 @@ function! s:toggle_call_hierarchy() abort
   endif
 endfunction
 
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : <SID>check_back_space() ? "\<Tab>" : coc#refresh()
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : <SID>check_backspace() ? "\<Tab>" : coc#refresh()
 inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
