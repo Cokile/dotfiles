@@ -271,6 +271,15 @@ function! s:toggle_call_hierarchy() abort
   endif
 endfunction
 
+function! s:toggle_diagnostics() abort
+    let location_list_open = get(getloclist(0, {'winid':0}), 'winid', 0)
+    if location_list_open
+        lclose
+    else
+        CocDiagnostics
+    endif
+endfunction
+
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : <SID>check_backspace() ? "\<Tab>" : coc#refresh()
 inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -279,7 +288,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nnoremap <silent> <leader>1 :CocCommand explorer<CR>
-nnoremap <silent> <leader>4 :CocDiagnostics<CR>
+nnoremap <silent> <leader>4 :call <SID>toggle_diagnostics()<CR>
 
 nnoremap <silent> <leader>fa <Plug>(coc-codeaction)
 nnoremap <silent> <leader>fd :call <SID>show_documentation()<CR>
