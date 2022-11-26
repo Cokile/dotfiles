@@ -46,7 +46,7 @@ window:
   startup_mode: Maximized
 
 shell:
-  program: /usr/local/bin/fish
+  program: /opt/share/bin/fish
   args:
     - -l
     - -c

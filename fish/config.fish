@@ -11,13 +11,21 @@ set -gx LANG en_US.UTF-8
 set -x EDITOR nvim
 set -x MANPAGER 'nvim +Man!'
 
+# homebrew
+if [ (uname -m) = 'arm64' ]
+    set -x BREW_PATH /opt/homebrew
+else
+    set -x BREW_PATH /usr/local
+end
+set -x PATH $BREW_PATH/bin $PATH
+
 ## go
 set -x GOPATH ~/go
 set -x PATH $GOPATH/bin $PATH
 
 ## ruby
-set -x RUBY_PATH /usr/local/opt/ruby
-set -x GEM_HOME /usr/local/lib/ruby/gems/3.1.0
+set -x RUBY_PATH $BREW_PATH/opt/ruby
+set -x GEM_HOME $BREW_PATH/lib/ruby/gems/3.1.0
 set -x PATH $RUBY_PATH/bin $PATH
 set -x PATH $GEM_HOME/bin $PATH
 
