@@ -33,11 +33,13 @@ brew "universal-ctags"
 cask "alacritty"
 cask "appcleaner"
 cask "calibre"
+cask "firefox"
 cask "font-fira-code"
-cask "google-chrome"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask 'maestral'
+cask 'obsidian'
+cask 'raycast'
 cask "telegram"
 cask "the-unarchiver"
 cask "typora"
