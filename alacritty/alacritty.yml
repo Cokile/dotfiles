@@ -53,4 +53,5 @@ shell:
     - 'tmux attach || tmux -2'
 
 key_bindings:
+    - { key: F, mods: Alt, chars: "\x1bf" }
     - { key: Q, mods: Alt, chars: "\x1bq" }

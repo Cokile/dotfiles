@@ -21,11 +21,9 @@
 
     ~/.config/fish/config.fish: fish/config.fish
     ~/.config/fish/fish_plugins: fish/fish_plugins
+    ~/.config/fish/themes/rei.theme: fish/themes/rei.theme
     ~/.config/fish/functions:
       path: fish/functions/*.fish
-      glob: true
-    ~/.config/fish/themes:
-      path: fish/themes/*.theme
       glob: true
 
     ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
@@ -33,7 +31,10 @@
     ~/.config/lazygit/config.yml: lazygit/config.yml
 
     ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
-    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/lua/:
+      path: nvim/lua/**
+      glob: true
 
     ~/.config/surfingkeys/surfingkeys.conf: surfingkeys/surfingkeys.conf
 

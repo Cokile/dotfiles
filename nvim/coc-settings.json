@@ -9,21 +9,14 @@
     "suggest.noselect": true,
     "suggest.virtualText": true,
     // language-override
-    "[go][json][lua][rust][swift][typescript]": {
+    "[json][lua][rust][swift]": {
         "semanticTokens.enable": true
     },
-    // coc-eslint
-    "eslint.autoFixOnSave": true,
     // coc-explorer
     "explorer.openAction.strategy": "previousBuffer",
-    // coc-go
-    "go.goplsOptions": {
-        "gofumpt": true,
-        "usePlaceholders": true,
-        "completeUnimported": true
-    },
     // coc-rust-analizer
     "rust-analyzer.checkOnSave.command": "clippy",
+    "rust-analyzer.cargo.allFeatures": true,
     // coc-snippets
     "snippets.ultisnips.directories": [
         "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips"
