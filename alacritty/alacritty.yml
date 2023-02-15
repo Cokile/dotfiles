@@ -35,8 +35,13 @@ colors:
      foreground: '#F2E5BC'  
 
 font:
-  family: Fira Code
-  size: 13.0
+  size: 12.0
+  normal:
+    family: Fira Code
+    style: Regular
+  bold:
+    family: Fira Code
+    style: Bold
 
 window:
   padding:
