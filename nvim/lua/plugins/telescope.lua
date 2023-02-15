@@ -1,4 +1,4 @@
-local mappings = require("../utils/mapping")
+local mappings = require("utils.mapping")
 
 local M = {
   "nvim-telescope/telescope.nvim",

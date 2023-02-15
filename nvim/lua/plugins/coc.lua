@@ -1,4 +1,4 @@
-local mapping = require("../utils/mapping")
+local mapping = require("utils.mapping")
 
 local M = {
   "neoclide/coc.nvim",

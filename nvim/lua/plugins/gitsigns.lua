@@ -1,4 +1,4 @@
-local mappings = require("../utils/mapping")
+local mappings = require("utils.mapping")
 
 local M = {
   "lewis6991/gitsigns.nvim",
