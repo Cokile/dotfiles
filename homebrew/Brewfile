@@ -1,6 +1,4 @@
 # Taps
-tap "homebrew/core"
-tap "homebrew/cask"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "melonamin/formulae"
