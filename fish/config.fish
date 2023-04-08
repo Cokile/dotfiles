@@ -2,16 +2,13 @@
 ## key bindings
 set fish_key_bindings fish_user_key_bindings
 
-## themes
-eval (gdircolors -c ~/.gruvbox.dircolors)
-
 
 # EXPORTS
 set -gx LANG en_US.UTF-8
 set -x EDITOR nvim
 set -x MANPAGER 'nvim +Man!'
 
-# homebrew
+## homebrew
 if [ (uname -m) = 'arm64' ]
     set -x BREW_PATH /opt/homebrew
 else
@@ -33,6 +30,9 @@ set -x PATH $GEM_HOME/bin $PATH
 set -x CARGO_HOME ~/.cargo
 set -x PATH $CARGO_HOME/bin $PATH
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/library
+
+## colors
+eval (gdircolors -c ~/.gruvbox.dircolors)
 
 
 # ALIASES
