@@ -24,5 +24,4 @@ git:
     pager: delta --paging=never --diff-highlight
   
 os:
-  editCommand: 'nvim'
-  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
+  editPreset: 'nvim'
