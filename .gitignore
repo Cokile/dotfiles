@@ -1,2 +1,4 @@
+.DS_Store
+
 # lazy-lock is updated frequently don't have to commit to git
 nvim/lazy-lock.json

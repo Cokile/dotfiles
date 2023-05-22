@@ -39,7 +39,6 @@
     ~/.config/surfingkeys/surfingkeys.conf: surfingkeys/surfingkeys.conf
 
     ~/.gitconfig: git/gitconfig
-    ~/.gitignore: git/gitignore
 
     ~/.gruvbox.dircolors: themes/gruvbox.dircolors
     ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Rei.xccolortheme: themes/Rei.xccolortheme
