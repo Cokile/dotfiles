@@ -2,11 +2,10 @@
     name = Cokile Ceoi
     email = cokileceoi@outlook.com
 [core]
-    excludesfile = ~/.gitignore
     editor = nvim
     pager = delta
 [credential]
-	helper = store --file ~/.my-credentials
+    helper = store --file ~/.my-credentials
 [color]
     ui = auto
 [format]
@@ -30,7 +29,7 @@
     cob = checkout -b
     coa = checkout -- .
     cot = checkout --track
-    cm = checkout master
+    cm = "!f() { local branch=$(git symbolic-ref refs/remotes/origin/HEAD | cut -f 4 -d "/"); git checkout ${branch}; }; f"
     cb = checkout -
     # cherry-pick
     cp = cherry-pick
@@ -53,13 +52,13 @@
     pf = push -f
     psu = "!f() { local branch=$(git rev-parse --abbrev-ref HEAD); git push -u origin ${branch}; }; f"
     # pull
-    plm = pull origin master
+    plm = "!f() { local branch=$(git symbolic-ref refs/remotes/origin/HEAD | cut -f 4 -d "/"); git pull origin ${branch}; }; f"
     cpp = "!f() { git cm && git plm && git pre; }; f"
     # rebase
     rbi = rebase -i
     rbc = rebase --continue
     rba = rebase --abort
-    rbm = rebase master
+    rbm = "!f() { local branch=$(git symbolic-ref refs/remotes/origin/HEAD | cut -f 4 -d "/"); git rebase ${branch}; }; f"
     # remote
     pre = remote prune origin
     # reset
