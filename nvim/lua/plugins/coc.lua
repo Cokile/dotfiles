@@ -3,7 +3,7 @@ local mapping = require("utils.mapping")
 local M = {
   "neoclide/coc.nvim",
   branch = "release",
-  event = "BufReadPre",
+  event = { "BufNewFile", "BufReadPre" },
   keys = { "<leader>1" },
 }
 
