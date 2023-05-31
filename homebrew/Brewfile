@@ -1,7 +1,6 @@
 # Taps
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
-tap "melonamin/formulae"
 
 # Formulae
 brew "bat"
@@ -25,7 +24,6 @@ brew "rustup-init"
 brew "tealdeer"
 brew "tig"
 brew "tmux"
-brew "universal-ctags"
 
 # Casks
 cask "alacritty"
