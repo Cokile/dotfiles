@@ -5,7 +5,7 @@
     editor = nvim
     pager = delta
 [credential]
-    helper = store --file ~/.my-credentials
+    helper = /usr/local/bin/git-credential-manager
 [color]
     ui = auto
 [format]
