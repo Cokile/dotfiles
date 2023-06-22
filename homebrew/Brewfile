@@ -43,6 +43,7 @@ cask "the-unarchiver"
 cask "typora"
 cask "visual-studio-code"
 cask "xbar"
+cask "xcodes"
 
 # Mac App Store Apps
 mas "WeChat", id: 836500024
