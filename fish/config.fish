@@ -22,7 +22,7 @@ set -x PATH $GOPATH/bin $PATH
 
 ## ruby
 set -x RUBY_PATH $BREW_PATH/opt/ruby
-set -x GEM_HOME $BREW_PATH/lib/ruby/gems/3.1.0
+set -x GEM_HOME $BREW_PATH/lib/ruby/gems/3.2.0
 set -x PATH $RUBY_PATH/bin $PATH
 set -x PATH $GEM_HOME/bin $PATH
 
