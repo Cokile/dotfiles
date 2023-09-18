@@ -16,6 +16,7 @@ function M.config()
     "coc-snippets",
     "coc-solargraph",
     "coc-sourcekit",
+    "coc-toml",
     "coc-yaml",
   }
 
