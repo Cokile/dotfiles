@@ -15,7 +15,7 @@
 - link:
     ~/Brewfile: homebrew/Brewfile
 
-    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
 
     ~/.config/bat/config: bat/config
 
