@@ -20,12 +20,6 @@ function run_install_scripts {
 
 # and then install dotfiles with dotbot
 function install_dotfiles {
-    # install dotbot with pip3 if needed first
-    if [[ $(command -v dotbot) == "" ]]; then
-        echo '+++++++Installing dotbot+++++++'
-        pip3 install dotbot
-        echo -e '-----Dotbot is installed------\n'
-    fi
     echo '+++++++Installing dotfiles+++++++'
     dotbot -c install.conf.yaml
     echo -e '-----Dotfiles are installed------\n'
