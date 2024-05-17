@@ -1,6 +1,5 @@
 # Taps
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "microsoft/git"
 
 # Formulae
@@ -10,6 +9,7 @@ brew "dotbot"
 brew "eza"
 brew "fd"
 brew "fish"
+brew "font-fira-code"
 brew "fzf"
 brew "git"
 brew "git-delta"
@@ -31,7 +31,6 @@ brew "tmux"
 cask "alacritty"
 cask "appcleaner"
 cask "calibre"
-cask "font-fira-code"
 cask "git-credential-manager"
 cask "google-chrome"
 cask "hammerspoon"
