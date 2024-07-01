@@ -7,7 +7,6 @@ local M = {
 
 function M.config()
   require("gitsigns").setup({
-    _extmark_signs = true,
     current_line_blame_opts = {
       relative_time = true
     },
