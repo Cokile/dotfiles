@@ -57,7 +57,7 @@ startup_mode = "Maximized"
 x = 4
 y = 4
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "tmux attach || tmux -2"]
 program = "/opt/share/bin/fish"
 
