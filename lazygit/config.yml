@@ -1,27 +1,22 @@
-startuppopupversion: 1
+disableStartupPopups: true
 notARepository: "skip"
-reporting: "off"
 promptToReturnFromSubprocess: false
 
 gui:
   theme:
-    lightTheme: true
     selectedLineBgColor:
       - '#EDDEB5'
-    selectedRangeBgColor:
-      - reverse
     cherryPickedCommitBgColor:
       - reverse
   authorColors:
     '*': '#B47109'
   showFileTree: false
-  showBottomLine: false
 
 git:
   branchLogCmd: "git log --graph"
   paging:
-    colorarg: always
-    pager: delta --paging=never --diff-highlight
+    colorArg: always
+    pager: delta --paging=never --diff-highlight --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   
 os:
   editPreset: 'nvim'
