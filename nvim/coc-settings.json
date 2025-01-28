@@ -1,30 +1,29 @@
 {
-    // coc
-    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "*"
-    ],
-    "outline.sortBy": "position",
-    "outline.splitCommand": "botright 50vs",
-    "suggest.noselect": true,
-    "suggest.virtualText": true,
-    // language-override
-    "[json][lua][rust][swift]": {
-        "semanticTokens.enable": true
-    },
-    // coc-explorer
-    "explorer.openAction.strategy": "previousBuffer",
-    // coc-rust-analizer
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "rust-analyzer.cargo.allFeatures": true,
-    // coc-snippets
-    "snippets.ultisnips.directories": [
-        "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips"
-    ],
-    // coc-solargraph
-    "solargraph.diagnostics": true,
-    "solargraph.formatting": true,
-    // coc-sourcekit
-    "sourcekit.sdk": "iphonesimulator",
-    "sourcekit.targetArch": "x86_64-apple-ios14.5-simulator"
+  // coc
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "coc.preferences.formatOnSave": true,
+  "outline.sortBy": "position",
+  "outline.splitCommand": "botright 50vs",
+  "suggest.noselect": true,
+  "suggest.virtualText": true,
+  // language-override
+  "[json][lua][rust][swift]": {
+    "semanticTokens.enable": true,
+  },
+  // coc-explorer
+  "explorer.openAction.strategy": "previousBuffer",
+  // coc-rust-analizer
+  "rust-analyzer.cargo.features": "all",
+  "rust-analyzer.checkOnSave": true,
+  "rust-analyzer.check.command": "clippy",
+  // coc-snippets
+  "snippets.ultisnips.directories": [
+    "~/.local/share/nvim/site/pack/packer/start/vim-snippets/UltiSnips"
+  ],
+  // coc-solargraph
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  // coc-sourcekit
+  "sourcekit.sdk": "iphonesimulator",
+  "sourcekit.targetArch": "x86_64-apple-ios18.1-simulator"
 }

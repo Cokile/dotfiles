@@ -1,7 +1,7 @@
 local mapping = require("utils.mapping")
 
 local M = {
-  "phaazon/hop.nvim",
+  "smoka7/hop.nvim",
   keys = { "<leader><leader>f" }
 }
 
