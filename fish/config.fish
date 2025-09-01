@@ -45,8 +45,9 @@ alias xo='xed .'
 alias cat=bat
 
 ## eza
-alias tree='eza -T -L=2'
+alias ls=eza
 alias la='eza -al'
+alias tree='eza -T -L=2'
 
 ## fd
 alias find=fd
