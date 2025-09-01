@@ -27,6 +27,7 @@ brew "rustup-init"
 brew "tealdeer"
 brew "tig"
 brew "tmux"
+brew "zoxide"
 
 # Casks
 cask "alacritty"

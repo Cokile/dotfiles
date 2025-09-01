@@ -86,6 +86,7 @@ alias vim=nvim
 ## tig
 alias t='tig --all'
 
-## z.lua
-alias jf='j -I'
+## zoxide
+zoxide init --cmd j fish | source
+
 
