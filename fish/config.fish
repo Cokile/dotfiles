@@ -70,7 +70,7 @@ set -x FZF_DEFAULT_OPTS '
 ## fzf.fish
 set fzf_fd_opts --hidden --follow --exclude=.git
 set fzf_preview_dir_cmd exa -al --color=always
-fzf_configure_bindings --history=\e\cr --variables=\e\cv
+fzf_configure_bindings --directory=\cf
 
 ## git
 alias g=git
