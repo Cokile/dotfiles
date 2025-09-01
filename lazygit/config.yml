@@ -11,6 +11,7 @@ gui:
   authorColors:
     '*': '#B47109'
   showFileTree: false
+  useHunkModeInStagingView: false
 
 git:
   branchLogCmd: "git log --graph"
