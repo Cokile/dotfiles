@@ -110,8 +110,11 @@
     hunk-header-style = omit
     syntax-theme = gruvbox-light
 
+[tig]
+    diff-indicator = false
 [tig "color"]
     cursor = 59 187
+    cursor-blur = 59 187
     title-blur = 59 187
     title-focus = 59 187
 [tig "bind"]
