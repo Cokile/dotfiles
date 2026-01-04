@@ -1,7 +1,6 @@
 disableStartupPopups: true
 notARepository: "skip"
 promptToReturnFromSubprocess: false
-
 gui:
   theme:
     selectedLineBgColor:
@@ -12,12 +11,10 @@ gui:
     '*': '#B47109'
   showFileTree: false
   useHunkModeInStagingView: false
-
 git:
   branchLogCmd: "git log --graph"
-  paging:
-    colorArg: always
-    pager: delta --paging=never --diff-highlight --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
-  
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --diff-highlight --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 os:
   editPreset: 'nvim'
