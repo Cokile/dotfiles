@@ -20,6 +20,7 @@ brew "luarocks"
 brew "mas"
 brew "neovim"
 brew "node"
+brew "pandoc"
 brew "python3"
 brew "ripgrep"
 brew "ruby"
@@ -35,9 +36,9 @@ cask "appcleaner"
 cask "calibre"
 cask "git-credential-manager"
 cask "google-chrome"
-cask "hammerspoon"
 cask "karabiner-elements"
 cask 'maestral'
+cask "markedit"
 cask 'obsidian'
 cask 'raycast'
 cask "telegram"
