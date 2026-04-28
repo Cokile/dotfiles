@@ -17,15 +17,14 @@ function fish_prompt
     set -l cyan (set_color brcyan)
     set -l magenta (set_color brmagenta)
 
-    set -l cwd (pwd | sed "s:^$HOME:~:")
+    set -l cwd (string replace -r "^$HOME" '~' (pwd))
     set -l user (whoami)
 
     if [ (_git_branch_name) ]
-        if test (_git_branch_name) = "master"
-            set -l git_branch (_git_branch_name)
+        set -l git_branch (_git_branch_name)
+        if contains $git_branch master main trunk
             set git_info "$white($red$git_branch"
         else
-            set -l git_branch (_git_branch_name)
             set git_info "$white($magenta$git_branch"
         end
 

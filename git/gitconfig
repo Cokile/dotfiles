@@ -8,7 +8,7 @@
     editor = nvim
     pager = delta
 [credential]
-    helper = /usr/local/bin/git-credential-manager
+    helper = manager
 [color]
     ui = auto
 [column]
@@ -28,6 +28,8 @@
     smudge = git lfs smudge %f
 [format]
     pretty = %C(yellow)%h%C(reset) -%C(red)%d%C(reset) %C(black)%s%C(reset) %C(green)<%an>%C(reset) %C(white)(%cr)%C(reset)
+[init]
+    defaultBranch = main
 [interactive]
     diffFilter = delta --color-only --relative-paths
 [add.interactive]
