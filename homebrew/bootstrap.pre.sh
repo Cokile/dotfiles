@@ -3,15 +3,14 @@
 set -e
 
 # install Homebrew if needed
-if [[ $(command -v brew) == "" ]]; then
+if ! command -v brew >/dev/null 2>&1; then
     echo "Installing Homebrew..."
-    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 echo "Homebrew is installed."
 
-# install packages in Brewfile if needed
-## use python3 as the check, since we need it to install dotbot
-if [[ $(brew list | grep python@3) == "" ]]; then
+# install packages in Brewfile if any are missing or outdated
+if ! brew bundle check --file=homebrew/Brewfile >/dev/null 2>&1; then
     echo "Installing packages..."
     brew bundle --file=homebrew/Brewfile
 fi

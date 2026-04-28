@@ -5,9 +5,9 @@ set -e
 # setup tpm
 TPM_PATH="$HOME/.tmux/plugins/tpm"
 if [[ ! -d "$TPM_PATH" ]]; then
-echo "Setting tpm..."
-git clone https://github.com/tmux-plugins/tpm "$TPM_PATH"
-echo "tpm set."
+    echo "Setting tpm..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_PATH" || { rm -rf "$TPM_PATH"; echo "ERROR: failed to clone tpm" >&2; exit 1; }
+    echo "tpm set."
 fi
 
 # reminders
