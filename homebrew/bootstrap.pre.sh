@@ -12,7 +12,7 @@ echo "Homebrew is installed."
 # install packages in Brewfile if needed
 ## use python3 as the check, since we need it to install dotbot
 if [[ $(brew list | grep python@3) == "" ]]; then
-    echo "Insatlling packages..."
+    echo "Installing packages..."
     brew bundle --file=homebrew/Brewfile
 fi
 echo "Packages are installed."

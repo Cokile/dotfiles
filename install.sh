@@ -55,6 +55,6 @@ fi
 install_dotfiles
 if $BOOTSTRAP; then
     run_install_scripts 'bootstrap.post.sh'
-    echo "Now quit your terminal and enjoy your journey with Alacritty + tumx + fish + Neovim ;-)"
+    echo "Now quit your terminal and enjoy your journey with Alacritty + tmux + fish + Neovim ;-)"
 fi
 
