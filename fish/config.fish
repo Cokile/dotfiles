@@ -1,4 +1,4 @@
-# VARIABLES 
+# VARIABLES
 ## key bindings
 set fish_key_bindings fish_user_key_bindings
 
@@ -33,6 +33,15 @@ set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/library
 
 ## colors
 eval (gdircolors -c ~/.gruvbox.dircolors)
+
+
+# TMUX
+if status is-interactive; and test -z "$TMUX"; and test -n "$ALACRITTY_SOCKET"
+    set client_count (tmux list-clients 2>/dev/null | wc -l | string trim)
+    if test "$client_count" -eq 0
+        tmux attach 2>/dev/null || tmux -2
+    end
+end
 
 
 # ALIASES
