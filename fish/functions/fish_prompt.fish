@@ -1,9 +1,10 @@
 function _git_branch_name
-    echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+    command git symbolic-ref --short HEAD 2>/dev/null
 end
 
 function _is_git_dirty
-    echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+    set -l changes (command git status --porcelain --ignore-submodules=dirty 2>/dev/null)
+    test -n "$changes"
 end
 
 function fish_prompt
@@ -19,18 +20,17 @@ function fish_prompt
 
     set -l cwd (string replace -r "^$HOME" '~' (pwd))
     set -l user (whoami)
+    set -l git_info
 
-    if [ (_git_branch_name) ]
-        set -l git_branch (_git_branch_name)
-        if contains $git_branch master main trunk
+    set -l git_branch (_git_branch_name)
+    if test -n "$git_branch"
+        if contains -- $git_branch master main trunk
             set git_info "$white($red$git_branch"
         else
             set git_info "$white($magenta$git_branch"
         end
-
-        if [ (_is_git_dirty) ]
-            set -l dirty "$yellow*"
-            set git_info "$git_info$dirty$white)"
+        if _is_git_dirty
+            set git_info "$git_info$yellow*$white)"
         else
             set git_info "$git_info$white)"
         end

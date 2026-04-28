@@ -5,41 +5,52 @@ set fish_key_bindings fish_user_key_bindings
 
 # EXPORTS
 set -gx LANG en_US.UTF-8
-set -x EDITOR nvim
-set -x MANPAGER 'nvim +Man!'
+set -gx EDITOR nvim
+set -gx MANPAGER 'nvim +Man!'
 
 ## homebrew
-if [ (uname -m) = 'arm64' ]
-    set -x BREW_PATH /opt/homebrew
+if test (uname -m) = arm64
+    set -gx BREW_PATH /opt/homebrew
 else
-    set -x BREW_PATH /usr/local
+    set -gx BREW_PATH /usr/local
 end
-set -x PATH $BREW_PATH/bin $PATH
+fish_add_path -gP $BREW_PATH/bin
 
 ## go
-set -x GOPATH ~/go
-set -x PATH $GOPATH/bin $PATH
+set -gx GOPATH ~/go
+fish_add_path -gP $GOPATH/bin
 
 ## ruby
-set -x RUBY_PATH $BREW_PATH/opt/ruby
-set -x GEM_HOME $BREW_PATH/Cellar/ruby/4.0.0/lib/ruby/gems/4.0.0
-set -x PATH $RUBY_PATH/bin $PATH
-set -x PATH $GEM_HOME/bin $PATH
+set -gx RUBY_PATH $BREW_PATH/opt/ruby
+fish_add_path -gP $RUBY_PATH/bin
+for gemdir in $RUBY_PATH/lib/ruby/gems/*/bin
+    test -d $gemdir; and fish_add_path -gP $gemdir
+end
 
 ## rust
-set -x CARGO_HOME ~/.cargo
-set -x PATH $CARGO_HOME/bin $PATH
-set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/library
+set -gx CARGO_HOME ~/.cargo
+fish_add_path -gP $CARGO_HOME/bin
+if command -q rustc; and not set -q RUST_SRC_PATH
+    set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/library
+end
 
 ## colors
-eval (gdircolors -c ~/.gruvbox.dircolors)
+if command -q gdircolors; and status is-interactive
+    eval (gdircolors -c ~/.gruvbox.dircolors)
+end
+
+
+# =============================================================================
+# EVERYTHING BELOW IS FOR INTERACTIVE SHELLS ONLY
+# =============================================================================
+status is-interactive; or return
 
 
 # TMUX
-if status is-interactive; and test -z "$TMUX"; and test -n "$ALACRITTY_SOCKET"
-    set client_count (tmux list-clients 2>/dev/null | wc -l | string trim)
+if test -z "$TMUX"; and test -n "$ALACRITTY_SOCKET"
+    set -l client_count (tmux list-clients 2>/dev/null | wc -l | string trim)
     if test "$client_count" -eq 0
-        tmux attach 2>/dev/null || tmux -2
+        tmux attach 2>/dev/null; or tmux -2
     end
 end
 
@@ -62,13 +73,13 @@ alias tree='eza -T -L=2'
 alias find=fd
 
 ## fzf
-set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
-set -x FZF_DEFAULT_OPTS '
---cycle 
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+set -gx FZF_DEFAULT_OPTS '
+--cycle
 --border
 --height=90%
---layout=reverse 
---preview-window=wrap 
+--layout=reverse
+--preview-window=wrap
 --marker=">"
 --color=fg:#968977,bg:#f2e5bc,hl:#b47109
 --color=fg+:#968977,bg+:#f2e5bc,hl+:#b47109
@@ -78,7 +89,7 @@ set -x FZF_DEFAULT_OPTS '
 
 ## fzf.fish
 set fzf_fd_opts --hidden --follow --exclude=.git
-set fzf_preview_dir_cmd exa -al --color=always
+set fzf_preview_dir_cmd 'eza -al --color=always'
 fzf_configure_bindings --directory=\cf
 
 ## git
@@ -96,7 +107,11 @@ alias vim=nvim
 ## tig
 alias t='tig --all'
 
-## zoxide
-zoxide init --cmd j fish | source
-
+if command -q zoxide
+    function j --description 'zoxide jump (lazy-initialised)'
+        functions --erase j
+        zoxide init --cmd j fish | source
+        j $argv
+    end
+end
 
