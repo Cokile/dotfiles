@@ -19,7 +19,7 @@ echo "Fish is the default shell."
 
 # change theme
 echo "Changing fish theme..."
-fish -c 'yes | fish_config theme save rei'
+fish -c 'yes | fish_config theme save gruvbox-material'
 echo "Fish theme changed."
 
 # install plugins

@@ -1,0 +1,41 @@
+# gruvbox-material light soft (material foreground)
+# https://github.com/sainnhe/gruvbox-material
+
+fish_color_normal 4f3829
+fish_color_command 45707a
+fish_color_keyword c14a4a
+fish_color_quote 6c782e
+fish_color_redirection 945e80
+fish_color_end c35e0a
+fish_color_error c14a4a
+fish_color_param 4f3829
+fish_color_option 654735
+fish_color_comment 928374
+fish_color_selection --background=d5c4a1
+fish_color_operator 4c7a5d
+fish_color_escape 945e80
+fish_color_autosuggestion 928374
+fish_color_cwd 6c782e
+fish_color_cwd_root c14a4a
+fish_color_user 4c7a5d
+fish_color_host 45707a
+fish_color_host_remote b47109
+fish_color_status c14a4a
+fish_color_cancel --reverse
+fish_color_search_match --background=f3deaa
+fish_color_history_current --bold
+fish_color_valid_path --underline
+
+fish_pager_color_progress 928374
+fish_pager_color_background
+fish_pager_color_prefix 945e80 --bold --underline
+fish_pager_color_completion 4f3829
+fish_pager_color_description 928374
+fish_pager_color_selected_background --background=d5c4a1
+fish_pager_color_selected_prefix 945e80 --bold --underline
+fish_pager_color_selected_completion 4f3829
+fish_pager_color_selected_description 654735
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix 945e80
+fish_pager_color_secondary_completion 4f3829
+fish_pager_color_secondary_description 928374

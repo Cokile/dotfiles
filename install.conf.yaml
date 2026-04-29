@@ -9,7 +9,7 @@
       force: true
     ~/.config:
       recursive: true
-    ~/Library/Developer/Xcode/UserData:
+    ~/Library/Developer/Xcode/UserData/FontAndColorThemes:
       recursive: true
 
 - link:
@@ -21,7 +21,7 @@
 
     ~/.config/fish/config.fish: fish/config.fish
     ~/.config/fish/fish_plugins: fish/fish_plugins
-    ~/.config/fish/themes/rei.theme: fish/themes/rei.theme
+    ~/.config/fish/themes/gruvbox-material.theme: fish/themes/gruvbox-material.theme
     ~/.config/fish/functions:
       path: fish/functions/*.fish
       glob: true
@@ -41,7 +41,7 @@
     ~/.gitconfig: git/gitconfig
 
     ~/.gruvbox.dircolors: themes/gruvbox.dircolors
-    ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Rei.xccolortheme: themes/Rei.xccolortheme
+    ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Gruvbox-Material.xccolortheme: themes/Gruvbox-Material.xccolortheme
 
     ~/.tmux.conf: tmux/tmux.conf
 

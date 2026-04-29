@@ -9,7 +9,7 @@ cyan = "#4C7A5D"
 green = "#6C782E"
 magenta = "#945E80"
 red = "#C14A4A"
-white = "#968977"
+white = "#928374"
 yellow = "#B47109"
 
 [colors.bright]
@@ -19,7 +19,7 @@ cyan = "#4C7A5D"
 green = "#6C782E"
 magenta = "#945E80"
 red = "#C14A4A"
-white = "#968977"
+white = "#928374"
 yellow = "#B47109"
 
 [colors.footer_bar]
@@ -27,16 +27,16 @@ background = "#654735"
 foreground = "#F2E5BC"
 
 [colors.search.focused_match]
-background = "#BF6D00"
-foreground = "#EBD9AE"
+background = "#C35E0A"
+foreground = "#EBDBB2"
 
 [colors.search.matches]
-background = "#69791D"
+background = "#6C782E"
 foreground = "#EDDEB5"
 
 [colors.selection]
-background = "#968977"
-text = "#F2E5BC"
+background = "#D5C4A1"
+text = "#4F3829"
 
 [font]
 size = 12.0

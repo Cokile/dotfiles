@@ -104,10 +104,10 @@
     whitespace-error-style = 22 reverse
 [delta "decorations"]
     minus-style = brightred
-    minus-emph-style = "#f5e5b7" brightred 
+    minus-emph-style = "#f2e5bc" brightred
     line-numbers-minus-style = brightred
     plus-style = brightgreen
-    plus-emph-style = "#f5e5b7" brightgreen
+    plus-emph-style = "#f2e5bc" brightgreen
     line-numbers-plus-style = brightgreen
     hunk-header-style = omit
     syntax-theme = gruvbox-light
@@ -115,10 +115,10 @@
 [tig]
     diff-indicator = false
 [tig "color"]
-    cursor = 59 187
-    cursor-blur = 59 187
-    title-blur = 59 187
-    title-focus = 59 187
+    cursor = color238 color187
+    cursor-blur = color238 color187
+    title-blur = color238 color187
+    title-focus = color238 color187
 [tig "bind"]
     generic = <C-g> move-first-line
     generic = G move-last-line
