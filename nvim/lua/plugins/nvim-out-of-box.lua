@@ -12,9 +12,7 @@ return {
       { "gc", mode = "v" },
       { "gb", mode = "v" },
     },
-    config = function()
-      require("Comment").setup()
-    end,
+    opts = {},
   },
 
   {
@@ -25,8 +23,6 @@ return {
       { "ds" },
       { "S", mode = "v" },
     },
-    config = function()
-      require("nvim-surround").setup()
-    end,
+    opts = {},
   },
 }

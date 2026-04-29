@@ -1,15 +1,12 @@
 local mapping = require("utils.mapping")
 
-local M = {
+return {
   "smoka7/hop.nvim",
-  keys = { "<leader><leader>f" }
+  keys = { "<leader><leader>f" },
+  config = function()
+    local hop = require('hop')
+    hop.setup()
+
+    mapping.nnoremap("<leader><leader>f", function() hop.hint_char1() end)
+  end,
 }
-
-function M.config()
-  local hop = require('hop')
-  hop.setup()
-
-  mapping.nnoremap("<leader><leader>f", function() hop.hint_char1() end)
-end
-
-return M

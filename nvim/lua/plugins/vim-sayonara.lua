@@ -1,13 +1,10 @@
 local mapping = require("utils.mapping")
 
-local M = {
+return {
   "mhinz/vim-sayonara",
   keys = { "<A-q>" },
   cmd = { "Sayonara" },
+  config = function()
+    mapping.nnoremap("<A-q>", ":Sayonara<CR>")
+  end,
 }
-
-function M.config()
-  mapping.nnoremap("<A-q>", ":Sayonara<CR>")
-end
-
-return M
