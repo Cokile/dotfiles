@@ -14,22 +14,22 @@ if test (uname -m) = arm64
 else
     set -gx BREW_PATH /usr/local
 end
-fish_add_path -gP $BREW_PATH/bin
+fish_add_path -gm $BREW_PATH/bin
 
 ## go
 set -gx GOPATH ~/go
-fish_add_path -gP $GOPATH/bin
+fish_add_path -gm $GOPATH/bin
 
 ## ruby
 set -gx RUBY_PATH $BREW_PATH/opt/ruby
-fish_add_path -gP $RUBY_PATH/bin
-for gemdir in $RUBY_PATH/lib/ruby/gems/*/bin
-    test -d $gemdir; and fish_add_path -gP $gemdir
+fish_add_path -gm $RUBY_PATH/bin
+for gemdir in $BREW_PATH/lib/ruby/gems/*/bin
+    test -d $gemdir; and fish_add_path -gm $gemdir
 end
 
 ## rust
 set -gx CARGO_HOME ~/.cargo
-fish_add_path -gP $CARGO_HOME/bin
+fish_add_path -gm $CARGO_HOME/bin
 if command -q rustc; and not set -q RUST_SRC_PATH
     set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/library
 end
