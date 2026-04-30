@@ -48,7 +48,7 @@ status is-interactive; or return
 if test -z "$TMUX"; and test -n "$ALACRITTY_SOCKET"
     set -l client_count (tmux list-clients 2>/dev/null | wc -l | string trim)
     if test "$client_count" -eq 0
-        tmux attach 2>/dev/null; or tmux -2
+        exec tmux new-session -A -s main
     end
 end
 
