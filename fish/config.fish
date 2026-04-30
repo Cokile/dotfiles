@@ -23,9 +23,7 @@ fish_add_path -gm $GOPATH/bin
 ## ruby
 set -gx RUBY_PATH $BREW_PATH/opt/ruby
 fish_add_path -gm $RUBY_PATH/bin
-for gemdir in $BREW_PATH/lib/ruby/gems/*/bin
-    test -d $gemdir; and fish_add_path -gm $gemdir
-end
+fish_add_path -gm $BREW_PATH/lib/ruby/gems/*/bin
 
 ## rust
 set -gx CARGO_HOME ~/.cargo
@@ -36,7 +34,7 @@ end
 
 ## colors
 if command -q gdircolors; and status is-interactive
-    eval (gdircolors -c ~/.gruvbox.dircolors)
+    gdircolors -c ~/.gruvbox.dircolors | source
 end
 
 
