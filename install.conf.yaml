@@ -43,7 +43,7 @@
     ~/.gruvbox.dircolors: themes/gruvbox.dircolors
     ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Gruvbox-Material.xccolortheme: themes/Gruvbox-Material.xccolortheme
 
-    ~/.tmux.conf: tmux/tmux.conf
+    ~/.config/tmux/tmux.conf: tmux/tmux.conf
 
     ~/.xvimrc: vim/xvimrc
     ~/.ideavimrc: vim/ideavimrc
