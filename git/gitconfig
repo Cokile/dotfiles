@@ -32,11 +32,11 @@
     defaultBranch = main
 [interactive]
     diffFilter = delta --color-only --relative-paths
-[add.interactive]
-    useBuiltin = false
 [log]
     abbrevCommit = true
     decorate = true
+[merge]
+    conflictStyle = zdiff3
 [push]
     default = simple
 [pull]
@@ -45,6 +45,8 @@
     autoSquash = true
     autoStash = true
     updateRefs = true
+[rerere]
+    enabled = true
 [tag]
     sort = version:refname
 
