@@ -4,9 +4,10 @@ set fish_key_bindings fish_user_key_bindings
 
 
 # EXPORTS
-set -gx LANG en_US.UTF-8
 set -gx EDITOR nvim
+set -gx LANG en_US.UTF-8
 set -gx MANPAGER 'nvim +Man!'
+set -gx XDG_CONFIG_HOME $HOME/.config
 
 ## homebrew
 if test (uname -m) = arm64
@@ -97,7 +98,7 @@ alias gi=git
 alias gt=git
 
 # lazygit
-alias lag='lazygit --use-config-file=$HOME/.config/lazygit/config.yml'
+alias lag=lazygit
 
 ## nvim
 alias vim=nvim
