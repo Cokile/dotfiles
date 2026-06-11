@@ -49,7 +49,11 @@ status is-interactive; or return
 if test -z "$TMUX"; and test -n "$ALACRITTY_SOCKET"
     set -l client_count (tmux list-clients 2>/dev/null | wc -l | string trim)
     if test "$client_count" -eq 0
+        # Initial window: attach an existing session or create one.
         exec tmux new-session -A -s main
+    else
+        # Subsequent windows: always start a fresh session.
+        exec tmux new-session
     end
 end
 
