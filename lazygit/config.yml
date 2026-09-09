@@ -13,8 +13,17 @@ gui:
   useHunkModeInStagingView: false
 git:
   branchLogCmd: "git log --graph"
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --paging=never --diff-highlight --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+      command: delta --paging=never --diff-highlight --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 os:
   editPreset: 'nvim'
+customCommands:
+  - key: "E"
+    context: "files, commitFiles"
+    description: "Edit using Xcode"
+    command: "xed {{ .SelectedPath }}"
+  - key: "O"
+    context: "files, commitFiles"
+    description: "Reveal in Finder"
+    command: "open {{ .SelectedPath }}/.."
