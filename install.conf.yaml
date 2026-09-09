@@ -41,7 +41,7 @@
     ~/.gitconfig: git/gitconfig
 
     ~/.gruvbox.dircolors: themes/gruvbox.dircolors
-    ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Gruvbox-Material.xccolortheme: themes/Gruvbox-Material.xccolortheme
+    ~/Library/Developer/Xcode/UserData/FontAndColorThemes/gruvbox-material-soft.xcworkspacecolortheme: themes/gruvbox-material-soft.xcworkspacecolortheme
 
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
 
