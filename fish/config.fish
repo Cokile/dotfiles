@@ -10,6 +10,7 @@ set -gx MANPAGER 'nvim +Man!'
 set -gx XDG_CONFIG_HOME $HOME/.config
 
 ## homebrew
+set -gx HOMEBREW_NO_ASK 1
 if test (uname -m) = arm64
     set -gx BREW_PATH /opt/homebrew
 else
